@@ -59,7 +59,9 @@ public abstract class AbstractItemBuilder implements BuildableItem {
     public @NotNull BuildableItem enchants(EnchantmentGroup... groups) {
         for (EnchantmentGroup group : groups) {
             if (group == null) continue;
-            group.getEnchantmentsMap().forEach(item::addUnsafeEnchantment);
+            group.getEnchantmentsMap().forEach((enchantment, level) ->
+                    meta.addEnchant(enchantment, level, true)
+            );
         }
 
         return this;
