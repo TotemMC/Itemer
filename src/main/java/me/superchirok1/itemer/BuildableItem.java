@@ -1,12 +1,14 @@
 package me.superchirok1.itemer;
 
 import me.superchirok1.itemer.enchant.EnchantmentGroup;
+import me.superchirok1.itemer.flag.FlagGroup;
 import net.kyori.adventure.text.Component;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
 import java.util.function.Consumer;
 
 public interface BuildableItem {
@@ -47,6 +49,13 @@ public interface BuildableItem {
     @NotNull BuildableItem lore(@NotNull String... lines);
 
     /**
+     * Sets the lore of the item using Adventure Components.
+     *
+     * @param components the components to use as lore
+     */
+    @NotNull BuildableItem lore(@NotNull List<Component> components);
+
+    /**
      * Adds enchantments to the item.
      *
      * @param groups the enchantments group
@@ -59,6 +68,20 @@ public interface BuildableItem {
      * @param flags the flags to add
      */
     @NotNull BuildableItem flags(ItemFlag... flags);
+
+    /**
+     * Adds item flags to the item.
+     *
+     * @param flags the flag group to add
+     */
+    @NotNull BuildableItem flags(FlagGroup... flags);
+
+    /**
+     * Adds item flags to the item.
+     *
+     * @param flags the flags to add
+     */
+    @NotNull BuildableItem flags(String... flags);
 
     /**
      * Sets the custom model data of the item.

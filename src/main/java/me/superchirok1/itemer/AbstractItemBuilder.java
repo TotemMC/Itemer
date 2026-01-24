@@ -1,8 +1,11 @@
 package me.superchirok1.itemer;
 
 import me.superchirok1.itemer.enchant.EnchantmentGroup;
+import me.superchirok1.itemer.flag.FlagGroup;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -56,10 +59,16 @@ public abstract class AbstractItemBuilder implements BuildableItem {
     }
 
     @Override
+    public @NotNull BuildableItem lore(@NotNull List<Component> components) {
+        meta.lore(components);
+        return this;
+    }
+
+    @Override
     public @NotNull BuildableItem enchants(EnchantmentGroup... groups) {
         for (EnchantmentGroup group : groups) {
             if (group == null) continue;
-            group.getEnchantmentsMap().forEach((enchantment, level) ->
+            group.storage.forEach((enchantment, level) ->
                     meta.addEnchant(enchantment, level, true)
             );
         }
@@ -70,8 +79,23 @@ public abstract class AbstractItemBuilder implements BuildableItem {
 
     @Override
     public @NotNull BuildableItem flags(ItemFlag... flags) {
-        for (ItemFlag flag : flags) {
-            meta.addItemFlags(flag);
+        meta.addItemFlags(flags);
+        return this;
+    }
+
+    @Override
+    public @NotNull BuildableItem flags(FlagGroup... flags) {
+        for (FlagGroup flag : flags) {
+            if (flag == null) continue;
+            flag.storage.forEach(meta::addItemFlags);
+        }
+        return this;
+    }
+
+    @Override
+    public @NotNull BuildableItem flags(String... flags) {
+        for (String flag : flags) {
+            meta.addItemFlags(ItemFlag.valueOf(flag));
         }
         return this;
     }
