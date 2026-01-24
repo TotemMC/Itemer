@@ -1,5 +1,6 @@
 package me.superchirok1.itemer.enchant;
 
+import me.superchirok1.itemer.AbstractGroup;
 import org.bukkit.enchantments.Enchantment;
 import org.jetbrains.annotations.NotNull;
 
@@ -10,88 +11,83 @@ import java.util.Map;
  * A class that modifies an item with enchantments
  * @author SuperCHIROK1
  */
-public class EnchantmentGroup {
+public class EnchantmentGroup extends AbstractGroup<Enchantment, Map<Enchantment, Integer>> {
 
-    private final Map<Enchantment, Integer> enchantments = new HashMap<>();
+    public EnchantmentGroup() {
+        super(new HashMap<>());
+    }
 
-    public static EnchantmentGroup create() {
+    public static @NotNull EnchantmentGroup create() {
         return new EnchantmentGroup();
     }
 
     /**
      * Adds an enchantment with a specific level to the group.
      *
-     * @param enchantment the enchantment to add
+     * @param item the enchantment to add
      * @param level       the level of the enchantment
      */
-    public @NotNull EnchantmentGroup addEnchantment(Enchantment enchantment, int level) {
-        enchantments.put(enchantment, level);
+    public @NotNull EnchantmentGroup add(@NotNull Enchantment item, @NotNull int level) {
+        storage.put(item, level);
         return this;
     }
 
     /**
      * Adds an enchantment with the default level (1) to the group.
      *
-     * @param enchantment the enchantment to add
+     * @param item the enchantment to add
      */
-    public @NotNull EnchantmentGroup addEnchantment(Enchantment enchantment) {
-        return addEnchantment(enchantment, 1);
+    public @NotNull EnchantmentGroup add(@NotNull Enchantment item) {
+        return add(item, 1);
     }
 
     /**
      * Adds an enchantment with a specific level to the group.
      *
-     * @param enchantment the enchantment to add
+     * @param item the enchantment to add
      * @param level       the level of the enchantment
      */
-    public @NotNull EnchantmentGroup add(Enchantment enchantment, int level) {
-        return addEnchantment(enchantment, level);
+    public @NotNull EnchantmentGroup addEnchantment(@NotNull Enchantment item, int level) {
+        return add(item, level);
     }
 
     /**
      * Adds an enchantment with the default level (1) to the group.
      *
-     * @param enchantment the enchantment to add
+     * @param item the enchantment to add
      */
-    public @NotNull EnchantmentGroup add(Enchantment enchantment) {
-        return addEnchantment(enchantment);
+    public @NotNull EnchantmentGroup addEnchantment(@NotNull Enchantment item) {
+        return add(item, 1);
     }
 
     /**
      * Removes an enchantment from the group.
      *
-     * @param enchantment the enchantment to remove
+     * @param item the enchantment to remove
      */
-    public @NotNull EnchantmentGroup removeEnchantment(Enchantment enchantment) {
-        enchantments.remove(enchantment);
+    @Override
+    public @NotNull EnchantmentGroup remove(@NotNull Enchantment item) {
+        storage.remove(item);
         return this;
     }
 
     /**
      * Removes an enchantment from the group.
      *
-     * @param enchantment the enchantment to remove
+     * @param item the enchantment to remove
      */
-    public @NotNull EnchantmentGroup remove(Enchantment enchantment) {
-        return removeEnchantment(enchantment);
+    public @NotNull EnchantmentGroup removeEnchantment(@NotNull Enchantment item) {
+        storage.remove(item);
+        return this;
     }
 
     /**
-     * Gets the level of a specific enchantment.
-     *
-     * @param enchantment the enchantment to check
-     * @return the level of the enchantment, or 0 if not present
+     * Removes all enchantments from the group (clear group).
      */
-    public int getLevel(@NotNull Enchantment enchantment) {
-        return enchantments.getOrDefault(enchantment, 0);
-    }
-
-    /**
-     * Returns map containing all enchantments
-     * @return a map containing all enchantments and their levels
-     */
-    public @NotNull Map<Enchantment, Integer> getEnchantmentsMap() {
-        return Map.copyOf(enchantments);
+    @Override
+    public @NotNull EnchantmentGroup clear() {
+        storage.clear();
+        return this;
     }
 
 }
