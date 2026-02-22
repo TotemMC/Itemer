@@ -1,7 +1,7 @@
-package me.superchirok1.itemer;
+package io.totemmc.itemer;
 
-import me.superchirok1.itemer.builder.ItemBuilder;
-import me.superchirok1.itemer.editor.ItemEditor;
+import io.totemmc.itemer.builder.ItemBuilder;
+import io.totemmc.itemer.editor.ItemEditor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 

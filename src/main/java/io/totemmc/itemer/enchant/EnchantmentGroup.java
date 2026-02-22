@@ -1,6 +1,6 @@
-package me.superchirok1.itemer.enchant;
+package io.totemmc.itemer.enchant;
 
-import me.superchirok1.itemer.AbstractGroup;
+import io.totemmc.itemer.AbstractGroup;
 import org.bukkit.enchantments.Enchantment;
 import org.jetbrains.annotations.NotNull;
 

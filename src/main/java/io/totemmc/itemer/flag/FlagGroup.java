@@ -1,6 +1,6 @@
-package me.superchirok1.itemer.flag;
+package io.totemmc.itemer.flag;
 
-import me.superchirok1.itemer.AbstractGroup;
+import io.totemmc.itemer.AbstractGroup;
 import org.bukkit.inventory.ItemFlag;
 import org.jetbrains.annotations.NotNull;
 
