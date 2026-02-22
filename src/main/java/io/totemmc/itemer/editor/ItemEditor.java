@@ -1,6 +1,6 @@
-package me.superchirok1.itemer.editor;
+package io.totemmc.itemer.editor;
 
-import me.superchirok1.itemer.AbstractItemBuilder;
+import io.totemmc.itemer.AbstractItemBuilder;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 

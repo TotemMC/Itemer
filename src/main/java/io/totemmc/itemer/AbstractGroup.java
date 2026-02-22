@@ -1,4 +1,4 @@
-package me.superchirok1.itemer;
+package io.totemmc.itemer;
 
 import org.jetbrains.annotations.NotNull;
 

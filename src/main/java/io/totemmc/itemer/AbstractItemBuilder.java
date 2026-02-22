@@ -1,7 +1,7 @@
-package me.superchirok1.itemer;
+package io.totemmc.itemer;
 
-import me.superchirok1.itemer.enchant.EnchantmentGroup;
-import me.superchirok1.itemer.flag.FlagGroup;
+import io.totemmc.itemer.enchant.EnchantmentGroup;
+import io.totemmc.itemer.flag.FlagGroup;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import org.bukkit.inventory.ItemFlag;
