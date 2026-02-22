@@ -1,7 +1,6 @@
 package me.superchirok1.itemer.flag;
 
 import me.superchirok1.itemer.AbstractGroup;
-import me.superchirok1.itemer.enchant.EnchantmentGroup;
 import org.bukkit.inventory.ItemFlag;
 import org.jetbrains.annotations.NotNull;
 

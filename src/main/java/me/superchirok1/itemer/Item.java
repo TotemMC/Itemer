@@ -5,7 +5,6 @@ import me.superchirok1.itemer.editor.ItemEditor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-
 public class Item {
     public static ItemBuilder builder(Material material) {
         return builder(material, 1);

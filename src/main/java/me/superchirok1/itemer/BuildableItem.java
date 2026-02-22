@@ -106,6 +106,13 @@ public interface BuildableItem {
     @NotNull BuildableItem modifyMeta(@NotNull Consumer<ItemMeta> consumer);
 
     /**
+     * Sets the maximum value for the stack.
+     *
+     * @param maxStack value maximum stack value
+     */
+    @NotNull BuildableItem maxStack(int maxStack);
+
+    /**
      * Constructs the final {@link ItemStack}.
      *
      * @return the constructed ItemStack

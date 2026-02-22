@@ -4,8 +4,6 @@ import me.superchirok1.itemer.enchant.EnchantmentGroup;
 import me.superchirok1.itemer.flag.FlagGroup;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
-import org.bukkit.attribute.Attribute;
-import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -115,6 +113,12 @@ public abstract class AbstractItemBuilder implements BuildableItem {
     @Override
     public @NotNull BuildableItem modifyMeta(@NotNull java.util.function.Consumer<ItemMeta> consumer) {
         consumer.accept(meta);
+        return this;
+    }
+
+    @Override
+    public @NotNull BuildableItem maxStack(int maxStack) {
+        meta.setMaxStackSize(maxStack);
         return this;
     }
 
