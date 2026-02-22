@@ -37,7 +37,7 @@
 
 <dependencies>
     <dependency>
-        <groupId>com.github.BoxedThings</groupId>
+        <groupId>com.github.TotemMC</groupId>
         <artifactId>Itemer</artifactId>
         <!-- Replace VERSION with the latest release tag -->
         <version>VERSION</version>
@@ -53,7 +53,7 @@ repositories {
 
 dependencies {
     // Replace VERSION with the latest release tag
-    implementation 'com.github.BoxedThings:Itemer:VERSION'
+    implementation 'com.github.TotemMC:Itemer:VERSION'
 }
 ```
 
