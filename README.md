@@ -5,7 +5,7 @@
   ⚙️ Quick and easy creation and modification of <b>ItemStack</b> for Paper
 </p>
 <p align="center">
-  <a href="https://www.codefactor.io/repository/github/boxedthings/itemer"><img src="https://www.codefactor.io/repository/github/boxedthings/itemer/badge" alt="CodeFactor" /></a> <a href="https://jitpack.io/#BoxedThings/Itemer/"><img src="https://jitpack.io/v/BoxedThings/Itemer.svg" alt="JitPack" /></a> <img src="https://img.shields.io/badge/Software-Paper%201.21%2B-orange?style=flat" alt="software">
+  <a href="https://www.codefactor.io/repository/github/totemmc/itemer"><img src="https://www.codefactor.io/repository/github/boxedthings/itemer/badge" alt="CodeFactor" /></a> <a href="https://jitpack.io/#BoxedThings/Itemer/"><img src="https://jitpack.io/v/BoxedThings/Itemer.svg" alt="JitPack" /></a> <img src="https://img.shields.io/badge/Software-Paper%201.21%2B-orange?style=flat" alt="software">
 </p>
 
 ## 🔗 Links
